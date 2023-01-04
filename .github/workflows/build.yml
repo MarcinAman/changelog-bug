@@ -21,6 +21,12 @@ on:
   pull_request:
 
 jobs:
+  reproduce:
+    name: Reproduce
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reproduce build failure
+        run: ./gradlew runIde
 
   # Run Gradle Wrapper Validation Action to verify the wrapper's checksum
   # Run verifyPlugin, IntelliJ Plugin Verifier, and test Gradle tasks
